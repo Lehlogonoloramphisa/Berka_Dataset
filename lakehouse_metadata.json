@@ -1,0 +1,188 @@
+{
+  "version": 1,
+  "description": "CSV source metadata for loading the Berka Czech bank and PaySim datasets into lakehouse tables.",
+  "tables": [
+    {
+      "tableName": "account",
+      "sourcePath": "Berka-Czech-bank/account.csv",
+      "format": "csv",
+      "options": {
+        "header": true,
+        "delimiter": ";",
+        "quote": "\"",
+        "encoding": "UTF-8"
+      },
+      "columns": [
+        { "name": "account_id", "type": "integer" },
+        { "name": "district_id", "type": "integer" },
+        { "name": "frequency", "type": "string" },
+        { "name": "date", "type": "integer" }
+      ]
+    },
+    {
+      "tableName": "card",
+      "sourcePath": "Berka-Czech-bank/card.csv",
+      "format": "csv",
+      "options": {
+        "header": true,
+        "delimiter": ";",
+        "quote": "\"",
+        "encoding": "UTF-8"
+      },
+      "columns": [
+        { "name": "card_id", "type": "integer" },
+        { "name": "disp_id", "type": "integer" },
+        { "name": "type", "type": "string" },
+        { "name": "issued", "type": "string" }
+      ]
+    },
+    {
+      "tableName": "client",
+      "sourcePath": "Berka-Czech-bank/client.csv",
+      "format": "csv",
+      "options": {
+        "header": true,
+        "delimiter": ";",
+        "quote": "\"",
+        "encoding": "UTF-8"
+      },
+      "columns": [
+        { "name": "client_id", "type": "integer" },
+        { "name": "birth_number", "type": "string" },
+        { "name": "district_id", "type": "integer" }
+      ]
+    },
+    {
+      "tableName": "disp",
+      "sourcePath": "Berka-Czech-bank/disp.csv",
+      "format": "csv",
+      "options": {
+        "header": true,
+        "delimiter": ";",
+        "quote": "\"",
+        "encoding": "UTF-8"
+      },
+      "columns": [
+        { "name": "disp_id", "type": "integer" },
+        { "name": "client_id", "type": "integer" },
+        { "name": "account_id", "type": "integer" },
+        { "name": "type", "type": "string" }
+      ]
+    },
+    {
+      "tableName": "district",
+      "sourcePath": "Berka-Czech-bank/district.csv",
+      "format": "csv",
+      "options": {
+        "header": true,
+        "delimiter": ";",
+        "quote": "\"",
+        "encoding": "UTF-8"
+      },
+      "columns": [
+        { "name": "district_id", "type": "integer" },
+        { "name": "district_name", "type": "string" },
+        { "name": "region", "type": "string" },
+        { "name": "population", "type": "integer" },
+        { "name": "municipalities_under_500", "type": "integer" },
+        { "name": "municipalities_500_to_1999", "type": "integer" },
+        { "name": "municipalities_2000_to_9999", "type": "integer" },
+        { "name": "municipalities_over_10000", "type": "integer" },
+        { "name": "cities", "type": "integer" },
+        { "name": "urban_population_pct", "type": "double" },
+        { "name": "average_salary", "type": "integer" },
+        { "name": "unemployment_rate_1995", "type": "double" },
+        { "name": "unemployment_rate_1996", "type": "double" },
+        { "name": "entrepreneurs_per_1000", "type": "integer" },
+        { "name": "crimes_1995", "type": "integer" },
+        { "name": "crimes_1996", "type": "integer" }
+      ]
+    },
+    {
+      "tableName": "loan",
+      "sourcePath": "Berka-Czech-bank/loan.csv",
+      "format": "csv",
+      "options": {
+        "header": true,
+        "delimiter": ";",
+        "quote": "\"",
+        "encoding": "UTF-8"
+      },
+      "columns": [
+        { "name": "loan_id", "type": "integer" },
+        { "name": "account_id", "type": "integer" },
+        { "name": "date", "type": "integer" },
+        { "name": "amount", "type": "double" },
+        { "name": "duration", "type": "integer" },
+        { "name": "payments", "type": "double" },
+        { "name": "status", "type": "string" }
+      ]
+    },
+    {
+      "tableName": "orders",
+      "sourcePath": "Berka-Czech-bank/order.csv",
+      "format": "csv",
+      "options": {
+        "header": true,
+        "delimiter": ";",
+        "quote": "\"",
+        "encoding": "UTF-8"
+      },
+      "columns": [
+        { "name": "order_id", "type": "integer" },
+        { "name": "account_id", "type": "integer" },
+        { "name": "bank_to", "type": "string" },
+        { "name": "account_to", "type": "string" },
+        { "name": "amount", "type": "double" },
+        { "name": "k_symbol", "type": "string" }
+      ]
+    },
+    {
+      "tableName": "trans",
+      "sourcePath": "Berka-Czech-bank/trans.csv",
+      "format": "csv",
+      "options": {
+        "header": true,
+        "delimiter": ";",
+        "quote": "\"",
+        "encoding": "UTF-8"
+      },
+      "columns": [
+        { "name": "trans_id", "type": "integer" },
+        { "name": "account_id", "type": "integer" },
+        { "name": "date", "type": "integer" },
+        { "name": "type", "type": "string" },
+        { "name": "operation", "type": "string" },
+        { "name": "amount", "type": "double" },
+        { "name": "balance", "type": "double" },
+        { "name": "k_symbol", "type": "string" },
+        { "name": "bank", "type": "string" },
+        { "name": "account", "type": "string" }
+      ]
+    },
+    {
+      "tableName": "paysim",
+      "sourcePath": "PaySim/paysim.csv",
+      "format": "csv",
+      "options": {
+        "header": true,
+        "delimiter": ",",
+        "quote": "\"",
+        "encoding": "UTF-8"
+      },
+      "columns": [
+        { "name": "step", "type": "integer" },
+        { "name": "type", "type": "string" },
+        { "name": "amount", "type": "double" },
+        { "name": "nameOrig", "type": "string" },
+        { "name": "oldbalanceOrg", "type": "double" },
+        { "name": "newbalanceOrig", "type": "double" },
+        { "name": "nameDest", "type": "string" },
+        { "name": "oldbalanceDest", "type": "double" },
+        { "name": "newbalanceDest", "type": "double" },
+        { "name": "isFraud", "type": "integer" },
+        { "name": "isFlaggedFraud", "type": "integer" }
+      ]
+    }
+  ]
+}
